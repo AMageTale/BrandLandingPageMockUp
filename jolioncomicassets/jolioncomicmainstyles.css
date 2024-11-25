@@ -8,24 +8,97 @@
 /* Body */
 body {
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background-color: #111;
   color: #fff;
+  margin: 0;
+}
+
+footer {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
 }
 
 /* Header */
-header {
+/* Sticky Header */
+.sticky-header {
+  align-items: center;
+  position: sticky;
+  top: 0;
   background-color: #111;
-  padding: 20px;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
 }
+
+/* Navigation Menu */
+.sticky-header-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-header-menu li {
+  position: relative; /* For dropdown positioning */
+}
+
+.sticky-header-menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.sticky-header-menu a:hover {
+  background-color: #222;
+  border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Positioned just below the parent menu item */
+  left: 0;
+  background-color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.dropdown-content li {
+  width: 100%;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 nav ul li {
-  margin: 0 20px;
+  margin: 0;
 }
 
 nav ul li a {
@@ -41,41 +114,60 @@ nav ul li a:hover {
 /* Manga Logo */
 #logo {
   text-align: center;
-  padding: 40px 0;
-}
-
-#logo img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Auto Side Scrolling Gallery */
-#gallery {
-  overflow-x: auto;
-  white-space: nowrap;
   padding: 20px;
 }
 
-.gallery-container {
-  display: inline-flex;
-  gap: 20px;
-}
-
-.gallery-container img {
-  width: 300px;
+#logo img {
+  max-width: 80%;
   height: auto;
-  border: 3px solid #fff;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
 }
 
-.gallery-container img:hover {
-  transform: scale(1.05);
+/* Auto Scrolling Gallery */
+#auto-gallery-horizontal {
+  overflow: hidden; /* Hides the overflow to prevent visible scrollbars */
+  background-color: #111;
+  padding: 20px 0;
+}
+
+.scroll-horizontal-container {
+  position: relative;
+  white-space: nowrap; /* Prevents line breaks between images */
+  display: flex;
+  align-items: center;
+}
+
+.scroll-horizontal-container {
+  display: inline-flex;
+  animation: scroll 180s linear infinite; /* Smooth, continuous scrolling */
+}
+
+.scroll-horizontal-content img {
+  width: 300px; /* Adjust image size */
+  height: auto;
+  margin-right: 10px; /* Spacing between images */
+  border-radius: 8px;
+  border: 3px solid #fff;
+}
+
+.scroll-horizontal-content img:hover {
+  background-color: #ffffff; /* Darker shade for hover effect */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0); /* Start position */
+  }
+  100% {
+    transform: translateX(-50%); /* Scroll all content out of view */
+  }
 }
 
 /* Article Section */
 .article {
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
   align-items: center;
   justify-content: space-between;
   padding: 20px;
@@ -90,23 +182,65 @@ nav ul li a:hover {
   border-radius: 8px;
 }
 
-.article h2 {
+.article-content {
+  width: 55%; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column; /* Stack header, paragraph, and button vertically */
+  justify-content: center;
+}
+
+.article-content h2 {
   color: #fff;
+  align-self: center;
+  text-align: center;
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 10px; /* Add spacing below the header */
+}
+
+.article-content p {
+  color: #ccc; /* Adjust text color for better contrast */
+  align-self: center;
   text-align: center;
-  width: 50%;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px; /* Add spacing below the paragraph */
+}
+
+
+.learn-more-btn {
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  width: 128px;
+  margin-top: 10px; /* Adds space above the button */
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff; /* Button background color */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #b9b9b9; /* Darker shade for hover effect */
+  transform: scale(1.50); /* Slightly enlarge button on hover */
 }
 
 #character-bios, #chapters {
   background-color: #222;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Mobile and Tablet Responsive Design */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 15px;
+  }
+
   .article {
-    flex-direction: column;
+    flex-direction: column; /* Stack content vertically on smaller screens */
     text-align: center;
   }
 
@@ -116,6 +250,80 @@ nav ul li a:hover {
   }
 
   .article h2 {
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #logo img {
+    max-width: 90%;
+  }
+
+  .gallery-container img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smaller Screens */
+  body {
+    font-size: 14px;
+  }
+
+  .article h2 {
+    font-size: 20px;
+  }
+
+  #gallery {
+    padding: 10px 0;
+  }
+
+  .gallery-container img {
+    width: 200px;
+  }
+
+  #logo img {
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .article {
+    padding: 15px;
+  }
+
+  .article img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #character-bios, #chapters {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small screens like phones in portrait */
+  body {
+    font-size: 12px;
+  }
+
+  nav ul {
+    gap: 8px;
+  }
+
+  .gallery-container img {
+    width: 150px;
+  }
+
+  .article h2 {
+    font-size: 18px;
+  }
+
+  .article img {
     width: 100%;
   }
 }

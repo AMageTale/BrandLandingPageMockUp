@@ -1,69 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--TAB INFORMATION-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manga Landing Page</title>
+  <title>A Mage Tale: Jolion</title>
   <link rel="stylesheet" href="jolioncomicassets/jolioncomicmainstyles.css">
 </head>
+
+<!--PAGE BODY-->
 <body>
-  <!-- Header Section -->
+
+  <!-- Header -->
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#character-bios">Character Bios</a></li>
-        <li><a href="#chapters">Chapters</a></li>
+    <link rel="icon" href="images/FranchiseLogoTab.ico">
+    <nav class="sticky-header">
+      <ul class="sticky-header-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#character-bios" class="dropbtn">Menu</a>
+          <ul class="dropdown-content">
+            <li><a href="jolioncomicmain.html">A Mage Tale: Jolion</a></li>
+            <li><a href="dungeonknightsmain.html">A Mage Tale: Dungeon Knights</a></li>          
+          </ul>
+        </li>    
       </ul>
     </nav>
   </header>
-
+  
   <!-- Manga Logo -->
   <section id="logo">
     <img src="jolioncomicassets/amtjolionlogo.png" alt="Manga Logo">
+    <p>Quiet animal, loud adventure!</p>
   </section>
 
   <!-- Auto Scrolling Gallery -->
-  <section id="gallery">
-    <div class="gallery-container">
-      <img src="images/pic01.jpg" alt="Image 1">
-      <img src="images/pic02.jpg" alt="Image 2">
-      <img src="images/pic03.jpg" alt="Image 3">
-      <img src="images/pic04.jpg" alt="Image 4">
-	  <img src="images/pic05.jpg" alt="Image 1">
-      <img src="images/pic06.jpg" alt="Image 2">
-      <img src="images/pic07.jpg" alt="Image 3">
-      <img src="images/pic08.jpg" alt="Image 4">
-	  <img src="images/pic01.jpg" alt="Image 1">
-      <img src="images/pic02.jpg" alt="Image 2">
-      <img src="images/pic03.jpg" alt="Image 3">
-      <img src="images/pic04.jpg" alt="Image 4">
-	  <img src="images/pic01.jpg" alt="Image 1">
-      <img src="images/pic02.jpg" alt="Image 2">
-      <img src="images/pic03.jpg" alt="Image 3">
-      <img src="images/pic04.jpg" alt="Image 4">
-      <!-- Add more images as needed -->
+  <section id="auto-gallery-horizontal">
+    <div class="scroll-horizontal-container">
+      <div class="scroll-horizontal-content">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image01.png" alt="Image 1">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image02.png" alt="Image 2">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image03.png" alt="Image 3">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image04.png" alt="Image 4">
+	      <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image05.png" alt="Image 1">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image06.png" alt="Image 2">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image01.png" alt="Image 3">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image08.png" alt="Image 4">
+	      <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image09.png" alt="Image 1">
+        <!-- Add more images as needed -->
+      </div>
     </div>
   </section>
+
+<section id="logo">
+  <p>Join jolion on his journey through Magic Guild Society 
+    as he faces strong enemies and uncovers secrets 
+    about himself along the way!</p>
+</section>
 
   <!-- Character Bios Section -->
   <section id="character-bios">
     <div class="article">
       <img src="images/learn.png" alt="Character Bios">
-      <h2>Character Bios</h2>
+      <div class="article-content">
+        <h2>Chapters</h2>
+        <p>Learn about the unique characters that shape the story and their captivating backstories.</p>
+        <a href="#character-bios-details" class="learn-more-btn">Learn More</a>
+      </div>
     </div>
   </section>
 
   <!-- Chapters Section -->
   <section id="chapters">
     <div class="article">
-      <img src="images/interact.png" alt="Chapters">
-      <h2>Chapters</h2>
-	  <p>Catch up </p>
+      <img src="images/explore.png" alt="chapters">
+      <div class="article-content">
+        <h2>Character Bios</h2>
+        <p>Explore the latest and past chapters of the manga, filled with thrilling adventures.</p>
+        <a href="#character-bios-details" class="learn-more-btn">Learn More</a>
+      </div>
     </div>
   </section>
 
-    <!-- JavaScript Link -->
-	<script src="jolioncomicassets/jolioncomicmainjavascript.js"></script>
+  <!-- Auto Scrolling Gallery -->
+  <section id="auto-gallery-horizontal">
+    <div class="scroll-horizontal-container">
+      <div class="scroll-horizontal-content">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image01.png" alt="Image 1">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image02.png" alt="Image 2">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image03.png" alt="Image 3">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image04.png" alt="Image 4">
+	      <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image05.png" alt="Image 1">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image06.png" alt="Image 2">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image01.png" alt="Image 3">
+        <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image08.png" alt="Image 4">
+	      <img src="jolioncomicassets/autoscrollinggalleryimages/hz-image09.png" alt="Image 1">
+        <!-- Add more images as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer-box">	
+      <ul class="copyright">
+        <li>&copy; A Mage Tale. All rights reserved.</li>					
+      </ul>
+    </div>
+  </section>
+
+  <!--END OF PAGE-->
+  <!-- JavaScript Links -->
+  <script src="jolioncomicassets/jolioncomicmainjavascript.js"></script>
+
 </body>
 </html>
