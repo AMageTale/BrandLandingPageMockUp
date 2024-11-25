@@ -13,20 +13,34 @@ body {
   margin: 0;
 }
 
+/* Fade-in elements start transparent and slightly moved down */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* When the element is in view, apply this class */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 footer {
   font-family: Arial, sans-serif;
-  background-color: #111;
+  background-color: #1b1b1b;
   color: #fff;
   margin: 0;
 }
 
 /* Header */
 /* Sticky Header */
-.sticky-header {
+.header {
   align-items: center;
   position: sticky;
   top: 0;
-  background-color: #111;
+  background-color: #1b1b1b;
   z-index: 1000;
   padding: 10px 0;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
@@ -92,9 +106,10 @@ footer {
 
 nav ul {
   list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  display: flex; /* Ensure items are aligned horizontally */
+  justify-content: center; /* Center items */
+  gap: 20px; /* Add spacing between items */
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
 }
 
 nav ul li {
@@ -287,7 +302,7 @@ nav ul li a:hover {
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
   }
 
